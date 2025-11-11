@@ -1,7 +1,36 @@
 @import "tailwindcss";
 
+body {
+  min-height: 100%;
+  width: 100%;
+  background: #212121;
+  font-family: "Inter", sans-serif;
+}
+
 @layer components {
   .nav-shadow {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+  }
+  .typed {
+    font-family: "Courier New", Courier, monospace;
+    width: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: typing 1.5s steps(16, end) forwards;
+  }
+  .tech {
+    @apply 2xl:w-10 2xl:h-10 md:w-9 md:h-9 h-8 w-8 cursor-pointer;
+  }
+  .tech:hover {
+    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));
+  }
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
   }
 }

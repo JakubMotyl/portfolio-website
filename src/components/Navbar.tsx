@@ -1,4 +1,4 @@
-import { House, User, Code2, FolderCode } from "lucide-react";
+import { House, User, FolderCode } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface NavItem {
@@ -9,21 +9,48 @@ interface NavItem {
 const NAV_LIST: NavItem[] = [
   { icon: House, label: "Home" },
   { icon: User, label: "About" },
-  { icon: Code2, label: "Skills" },
   { icon: FolderCode, label: "Projects" },
 ];
 
 export default function Navbar() {
   return (
-    <nav className="fixed bottom-5 left-1/2 -translate-x-1/2 z-10 px-2 py-2 flex items-center justify-between bg-[#1a1a1a] text-[#F6F6F6] border border-[#F6F6F6] rounded-3xl nav-shadow">
-      <ul className="flex items-center">
+    <nav
+      className="
+        md:fixed md:bottom-5 md:left-1/2 md:-translate-x-1/2
+        z-10 md:w-auto w-full md:h-auto h-10
+        flex md:justify-between items-center
+        bg-[#1a1a1a] text-[#F6F6F6]
+        md:border border-[#F6F6F6] md:rounded-3xl
+        nav-shadow
+        md:px-2 px-0 md:py-2
+      "
+    >
+      <ul className="flex flex-row md:items-center w-full md:w-auto">
         {NAV_LIST.map(({ icon: Icon, label }, id) => (
-          <li key={id}>
-            <button className="relative flex items-center gap-2 px-5 py-2 cursor-pointer rounded-3xl hover:bg-[#F6F6F6] hover:text-[#1a1a1a] duration-200 group">
-              <Icon className="md:w-5 md:h-5 w-4 h-4" />
-              <span className="absolute hidden bottom-full mb-1 left-1/2 -translate-x-1/2 text-[#1a1a1a] bg-[#F6F6F6] rounded-3xl whitespace-nowrap font-medium text-[0.775rem] px-2 py-1 group-hover:block cursor-auto">
+          <li key={id} className="w-full md:w-auto">
+            <button
+              className="
+                relative flex md:flex-col flex-row items-center justify-center
+                w-full md:w-auto md:px-4 md:py-2 cursor-pointer md:rounded-3xl
+                hover:bg-[#F6F6F6] hover:text-[#1a1a1a] duration-200 group
+                h-10
+              "
+            >
+              <Icon className="md:w-5 md:h-5 w-6 h-6" />
+
+              {/* Tooltip na md+ */}
+              <span
+                className="
+                  hidden md:absolute md:bottom-full md:mb-1 md:left-1/2 md:-translate-x-1/2
+                  md:text-[#1a1a1a] md:bg-[#F6F6F6] md:rounded-3xl md:whitespace-nowrap 
+                  md:font-medium md:text-[0.775rem] md:px-2 md:py-1 md:group-hover:block
+                "
+              >
                 {label}
               </span>
+
+              {/* Label na md- */}
+              <span className="md:hidden ml-2 font-medium">{label}</span>
             </button>
           </li>
         ))}
