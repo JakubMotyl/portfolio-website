@@ -1,5 +1,6 @@
 import { House, User, FolderCode } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
+import { useEffect, useState } from "react";
 
 interface NavItem {
   icon: LucideIcon;
@@ -13,17 +14,27 @@ const NAV_LIST: NavItem[] = [
 ];
 
 export default function Navbar() {
+  const [showNav, setShowNav] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setShowNav(true);
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <nav
-      className="
-        md:fixed md:bottom-5 md:left-1/2 md:-translate-x-1/2
+      className={` ${
+        showNav ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+      } bg-[#1a1a1a] text-[#F6F6F6]
+        md:fixed md:bottom-4 md:left-1/2 md:-translate-x-1/2
         z-10 md:w-auto w-full md:h-auto h-10
         flex md:justify-between items-center
-        bg-[#1a1a1a] text-[#F6F6F6]
         md:border border-[#F6F6F6] md:rounded-3xl
-        nav-shadow
-        md:px-2 px-0 md:py-2
-      "
+        nav-shadow duration-500 md:px-2 px-0 md:py-2
+      `}
     >
       <ul className="flex flex-row md:items-center w-full md:w-auto">
         {NAV_LIST.map(({ icon: Icon, label }, id) => (

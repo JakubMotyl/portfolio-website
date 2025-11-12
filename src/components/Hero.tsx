@@ -8,6 +8,7 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import type { IconType } from "react-icons";
+import { useEffect, useState } from "react";
 
 interface SkillsProps {
   icon: IconType;
@@ -54,6 +55,28 @@ const SKILLS: SkillsProps[] = [
 ];
 
 export default function Hero() {
+  const [showFirst, setShowFirst] = useState(false);
+  const [showSecond, setShowSecond] = useState(false);
+  const [showThird, setShowThird] = useState(false);
+
+  useEffect(() => {
+    const timer1 = setTimeout(() => {
+      setShowFirst(true);
+    }, 1500);
+    const timer2 = setTimeout(() => {
+      setShowSecond(true);
+    }, 2000);
+    const timer3 = setTimeout(() => {
+      setShowThird(true);
+    }, 2500);
+
+    return () => {
+      clearTimeout(timer1);
+      clearTimeout(timer2);
+      clearTimeout(timer3);
+    };
+  }, []);
+
   return (
     <section
       className="flex flex-col justify-between md:justify-start items-center
@@ -64,7 +87,15 @@ export default function Hero() {
         <p className="typed">Hey, I'm Jakub 👋</p>
       </div>
       <div>
-        <p className="md:text-[5.5rem] text-[4rem] font-semibold text-center leading-tight tracking-wide">
+        <p
+          className={`md:text-[5.5rem] text-[4rem] font-semibold text-center leading-tight tracking-wide duration-500
+                    ${
+                      showFirst
+                        ? " opacity-100 translate-y-0"
+                        : " opacity-0 translate-y-3"
+                    }
+        `}
+        >
           <span className="bg-linear-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent">
             Frontend
           </span>{" "}
@@ -73,19 +104,30 @@ export default function Hero() {
         </p>
       </div>
       <div>
-        <p className="md:text-[1.25rem] text-[0.95rem] font-light text-center max-w-xl mx-auto text-[#d8d8d8]">
+        <p
+          className={`md:text-[1.25rem] text-[0.95rem] font-light text-center md:max-w-xl max-w-lg mx-auto text-[#d8d8d8] duration-500
+                      ${
+                        showSecond
+                          ? "opacity-100 translate-x-0"
+                          : "opacity-0 translate-x-3"
+                      } duration-200`}
+        >
           Passionate Frontend React Developer, building sleek and interactive
           apps - based in{" "}
-          <span className="bg-linear-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent">
+          <span className="bg-linear-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent font-normal">
             {" "}
-            Warsaw
+            Warsaw, Poland
           </span>{" "}
           📍
         </p>
       </div>
-      <div className="flex flex-col gap-4 items-center">
+      <div
+        className={`flex flex-col gap-6 items-center ${
+          showThird ? "opacity-100" : "opacity-0"
+        } duration-500`}
+      >
         <span className="md:text-[1.35rem] text-[1rem] text-[#F6F6F6] whitespace-nowrap">
-          Tech Stack:
+          Technical Skills:
         </span>
         <div className="flex items-center justify-center gap-6 flex-wrap">
           {SKILLS.map(({ icon: Icon, label, color }, id) => (
