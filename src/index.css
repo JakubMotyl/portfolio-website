@@ -11,6 +11,12 @@ body {
   .nav-shadow {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
   }
+  .section-p {
+    @apply 2xl:px-20 2xl:py-20 md:px-10 md:py-10 p-7;
+  }
+  .custom-text {
+    @apply bg-linear-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent font-normal;
+  }
   .typed {
     font-family: "Courier New", Courier, monospace;
     width: 0;
@@ -20,6 +26,9 @@ body {
   }
   .tech {
     @apply 2xl:w-10 2xl:h-10 md:w-9 md:h-9 h-8 w-8 cursor-pointer;
+  }
+  .tech-label {
+    @apply text-[#F6F6F6] font-bold md:text-[0.775rem] text-[0.7rem];
   }
   .tech:hover {
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));

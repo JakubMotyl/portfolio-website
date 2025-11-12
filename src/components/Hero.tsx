@@ -81,7 +81,7 @@ export default function Hero() {
     <section
       className="flex flex-col justify-between md:justify-start items-center
       md:h-screen h-[calc(100vh-2.5rem)] text-[#F6F6F6] 
-      2xl:gap-20 md:gap-10 2xl:px-20 2xl:py-20 md:px-10 md:py-10 p-7"
+      2xl:gap-20 md:gap-10 section-p"
     >
       <div className="inline-block md:text-[2.25rem] text-[1.6rem]">
         <p className="typed">Hey, I'm Jakub 👋</p>
@@ -113,12 +113,8 @@ export default function Hero() {
                       } duration-200`}
         >
           Passionate Frontend React Developer, building sleek and interactive
-          apps - based in{" "}
-          <span className="bg-linear-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent font-normal">
-            {" "}
-            Warsaw, Poland
-          </span>{" "}
-          📍
+          apps - based in <span className="custom-text">Warsaw</span>,{" "}
+          <span className="custom-text">Poland</span> 📍
         </p>
       </div>
       <div
@@ -133,9 +129,7 @@ export default function Hero() {
           {SKILLS.map(({ icon: Icon, label, color }, id) => (
             <div key={id} className="flex items-center flex-col space-y-1.5">
               <Icon className="tech" style={{ color }} />
-              <span className="text-[#F6F6F6] font-bold md:text-[0.775rem] text-[0.7rem]">
-                {label}
-              </span>
+              <span className="tech-label">{label}</span>
             </div>
           ))}
         </div>
