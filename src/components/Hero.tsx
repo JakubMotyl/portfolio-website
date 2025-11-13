@@ -82,6 +82,7 @@ export default function Hero() {
       className="flex flex-col justify-between md:justify-start items-center
       md:h-screen h-[calc(100vh-2.5rem)] text-[#F6F6F6] 
       2xl:gap-20 md:gap-10 section-p"
+      id="home"
     >
       <div className="inline-block md:text-[2.25rem] text-[1.6rem]">
         <p className="typed">Hey, I'm Jakub 👋</p>

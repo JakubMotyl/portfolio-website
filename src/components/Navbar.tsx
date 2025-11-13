@@ -5,12 +5,13 @@ import { useEffect, useState } from "react";
 interface NavItem {
   icon: LucideIcon;
   label: string;
+  section: string;
 }
 
 const NAV_LIST: NavItem[] = [
-  { icon: House, label: "Home" },
-  { icon: User, label: "About" },
-  { icon: FolderCode, label: "Projects" },
+  { icon: House, label: "Home", section: "home" },
+  { icon: User, label: "About", section: "about" },
+  { icon: FolderCode, label: "Projects", section: "projects" },
 ];
 
 export default function Navbar() {
@@ -23,6 +24,11 @@ export default function Navbar() {
 
     return () => clearTimeout(timer);
   }, []);
+
+  const handleScroll = (targetId: string) => {
+    const section = (document.getElementById(targetId) as HTMLElement) || null;
+    section && section.scrollIntoView({ behavior: "smooth" });
+  };
 
   return (
     <nav
@@ -37,7 +43,7 @@ export default function Navbar() {
       `}
     >
       <ul className="flex flex-row md:items-center w-full md:w-auto">
-        {NAV_LIST.map(({ icon: Icon, label }, id) => (
+        {NAV_LIST.map(({ icon: Icon, label, section }, id) => (
           <li key={id} className="w-full md:w-auto">
             <button
               className="
@@ -46,6 +52,7 @@ export default function Navbar() {
                 hover:bg-[#F6F6F6] hover:text-[#1a1a1a] duration-200 group
                 h-10
               "
+              onClick={() => handleScroll(section)}
             >
               <Icon className="md:w-5 md:h-5 w-6 h-6" />
 
