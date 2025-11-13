@@ -40,6 +40,14 @@ body {
   .btn-cv:hover {
     box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
   }
+  .img-shadow {
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+    transition: all 0.5s;
+  }
+  .img-shadow:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7);
+  }
 }
 
 @keyframes typing {
