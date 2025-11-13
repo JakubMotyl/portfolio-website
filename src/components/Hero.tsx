@@ -34,7 +34,7 @@ const SKILLS: SkillsProps[] = [
   },
   {
     icon: SiTailwindcss,
-    label: "Tailwindcss",
+    label: "Tailwind CSS",
     color: "#06B6D4",
   },
   {

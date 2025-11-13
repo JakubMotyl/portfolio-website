@@ -35,24 +35,42 @@ export default function About() {
       </div>
       <div className="flex items-center md:flex-row flex-col md:gap-10 gap-20 w-full max-w-6xl mx-auto">
         <div className="md:w-1/2 w-full flex flex-col gap-6">
-          <p className="2xl:text-[1.15rem] md:text-[1.05rem] text-[0.95rem]leading-relaxed">
+          <p className="2xl:text-[1.15rem] md:text-[1.05rem] text-[0.95rem] leading-relaxed">
             I'm a third-year Computer Science student and a Junior Frontend
             Developer with strong skills in{" "}
             <span className="custom-text">React</span>,{" "}
             <span className="custom-text">Tailwind CSS</span>,{" "}
             <span className="custom-text">JavaScript</span> and experience with{" "}
             <span className="custom-text">TypeScript</span>. <br /> I focus on
-            creating responsive and modern web applications with a strong on
-            user experience. I enjoy building and improving my skills through
-            hands-on projects.
+            creating responsive and modern web applications with a strong
+            emphasis on user experience. I enjoy building and improving my
+            skills through hands-on projects.
           </p>
-          <div className="flex gap-6 justify-center">
-            {SOCIALS.map(({ icon: Icon, label, color, link }, id) => (
-              <a key={id} href={link} target="_blink" className="space-y-1">
-                <Icon className="tech" style={{ color }} />
-                <span className="tech-label">{label}</span>
-              </a>
-            ))}
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-6">
+              {SOCIALS.map(({ icon: Icon, label, color, link }, id) => (
+                <a
+                  key={id}
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="space-y-1 group"
+                >
+                  <Icon className="tech" style={{ color }} />
+                  <span className="tech-label group-hover:underline">
+                    {label}
+                  </span>
+                </a>
+              ))}
+            </div>
+            <div className="flex gap-6">
+              <button className="btn-cv font-bold md:text-[0.825rem] text-[0.75rem]">
+                Download <span className="custom-text">CV</span> [PL]
+              </button>
+              <button className="btn-cv font-bold md:text-[0.825rem] text-[0.75rem]">
+                Download <span className="custom-text">CV</span> [EN]
+              </button>
+            </div>
           </div>
         </div>
         <div className="md:w-1/2 w-full flex justify-center">

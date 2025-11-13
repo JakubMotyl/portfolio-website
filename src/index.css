@@ -33,6 +33,13 @@ body {
   .tech:hover {
     filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));
   }
+  .btn-cv {
+    @apply bg-transparent px-4 py-2 cursor-pointer rounded-3xl
+    text-center text-[#F6F6F6] border border-[#F6F6F6];
+  }
+  .btn-cv:hover {
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+  }
 }
 
 @keyframes typing {
