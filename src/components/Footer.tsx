@@ -19,10 +19,10 @@ export default function Footer() {
         <div className="flex items-center gap-1">
           <CiMail className="md:w-5 md:h-5 w-4 h-4 text-[#FFF]" />
           <a
-            href="mailto:kubamotyl16@gmail.com"
+            href="mailto:&#x6b;&#x75;&#x62;&#x61;&#x6d;&#x6f;&#x74;&#x79;&#x6c;&#x31;&#x36;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;"
             className="text-[#d8d8d8] hover:underline duration-200"
           >
-            kubamotyl16@gmail.com
+            &#x6b;&#x75;&#x62;&#x61;&#x6d;&#x6f;&#x74;&#x79;&#x6c;&#x31;&#x36;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;
           </a>
         </div>
       </div>

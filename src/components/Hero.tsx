@@ -101,7 +101,7 @@ export default function Hero() {
             Frontend
           </span>{" "}
           <br />
-          <span className="text-white">React Developer</span>
+          <span className="text-white">Developer</span>
         </p>
       </div>
       <div>
