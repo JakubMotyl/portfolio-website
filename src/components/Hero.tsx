@@ -1,58 +1,5 @@
-import {
-  SiJavascript,
-  SiReact,
-  SiGit,
-  SiTailwindcss,
-  SiHtml5,
-  SiCss3,
-  SiTypescript,
-} from "react-icons/si";
-import type { IconType } from "react-icons";
 import { useEffect, useState } from "react";
-
-interface SkillsProps {
-  icon: IconType;
-  label: string;
-  color: string;
-}
-
-const SKILLS: SkillsProps[] = [
-  {
-    icon: SiReact,
-    label: "React",
-    color: "#61DAFB",
-  },
-  {
-    icon: SiTypescript,
-    label: "Typescript",
-    color: "#3178C6",
-  },
-  {
-    icon: SiJavascript,
-    label: "Javascript",
-    color: "#F7DF1E",
-  },
-  {
-    icon: SiTailwindcss,
-    label: "Tailwind CSS",
-    color: "#06B6D4",
-  },
-  {
-    icon: SiHtml5,
-    label: "HTML",
-    color: "#E34F26",
-  },
-  {
-    icon: SiCss3,
-    label: "CSS",
-    color: "#1572B6",
-  },
-  {
-    icon: SiGit,
-    label: "Git",
-    color: "#F05032",
-  },
-];
+import { SKILLS } from "../data/hero";
 
 export default function Hero() {
   const [showFirst, setShowFirst] = useState(false);
@@ -90,11 +37,11 @@ export default function Hero() {
       <div>
         <p
           className={`md:text-[5.5rem] text-[4rem] font-semibold text-center leading-tight tracking-wide duration-500
-                    ${
-                      showFirst
-                        ? " opacity-100 translate-y-0"
-                        : " opacity-0 translate-y-3"
-                    }
+            ${
+              showFirst
+                ? " opacity-100 translate-y-0"
+                : " opacity-0 translate-y-3"
+            }
         `}
         >
           <span className="bg-linear-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent">
@@ -107,11 +54,11 @@ export default function Hero() {
       <div>
         <p
           className={`md:text-[1.25rem] text-[0.95rem] font-light text-center md:max-w-xl max-w-lg mx-auto text-[#d8d8d8] duration-500
-                      ${
-                        showSecond
-                          ? "opacity-100 translate-x-0"
-                          : "opacity-0 translate-x-3"
-                      } duration-200`}
+            ${
+              showSecond
+                ? "opacity-100 translate-x-0"
+                : "opacity-0 translate-x-3"
+            }`}
         >
           Passionate Frontend React Developer, building sleek and interactive
           apps - based in <span className="custom-text">Warsaw</span>,{" "}

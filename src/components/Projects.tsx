@@ -1,14 +1,19 @@
-import FitCoreImg from "../assets/images/fitcore.png";
-import FilmZoneImg from "../assets/images/filmzone.png";
-import CryptoTradeImg from "../assets/images/cryptotrade.png";
 import { SiGithub } from "react-icons/si";
 import { MdOpenInNew } from "react-icons/md";
+import { projectDetails } from "../data/projects";
+import type { projectDetailsProps } from "../types";
 
 const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
-  const { title, desc, github, techStack, liveDemo, image } = details;
+  const { id, title, desc, github, techStack, liveDemo, image } = details;
+
+  const isReversed = id % 2 === 0;
 
   return (
-    <div className="flex w-full items-center gap-6 md:flex-row flex-col">
+    <div
+      className={`flex w-full items-center gap-6 ${
+        isReversed ? "md:flex-row-reverse" : "md:flex-row "
+      } flex-col`}
+    >
       <div className="md:w-1/2 w-full flex flex-col items-center gap-6">
         <span className="font-bold md:text-[1.35rem] text-[1.25rem]">
           {title}
@@ -16,7 +21,7 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
         <p className="leading-relaxed md:text-[0.9rem] text-[0.85rem] text-center max-w-lg">
           {desc}
         </p>
-        <ul className="flex items-center gap-4 flex-wrap">
+        <ul className="flex items-center justify-center gap-4 flex-wrap">
           {techStack.map((stack, id) => (
             <li key={id}>
               <span
@@ -61,42 +66,6 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
   );
 };
 
-type projectDetailsProps = {
-  title: string;
-  desc: string;
-  github: string;
-  techStack: string[];
-  liveDemo: string;
-  image: string;
-};
-
-const projectDetails: projectDetailsProps[] = [
-  {
-    title: "CryptoTrade",
-    desc: "A cryptocurrency dashboard built with TypeScript, React, and Tailwind CSS. It provides real-time market data, dynamic charts, and an intuitive UI for tracking coin prices and performance.",
-    github: "https://github.com/JakubMotyl/crypto-dashbord",
-    techStack: ["Typescript", "React", "Tailwind CSS", "REST API", "Chart JS"],
-    liveDemo: "https://crypto-dashbord-alpha.vercel.app",
-    image: CryptoTradeImg,
-  },
-  {
-    title: "FilmZone",
-    desc: "A movie discovery app where users can search for films, browse by category, and save favorites. Built with React, React Router, and Tailwind CSS, integrating an external API for dynamic content.",
-    github: "https://github.com/JakubMotyl/Movie-search",
-    techStack: ["React", "React Router", "Tailwind CSS", "REST API"],
-    liveDemo: "https://movie-search-lyart-five.vercel.app",
-    image: FilmZoneImg,
-  },
-  {
-    title: "FitCore",
-    desc: "A modern fitness app focused on clean UI and engaging user experience. Includes a sign-up page and smooth navigation between workout sections. Built with React, React Router, and Tailwind CSS.",
-    github: "https://github.com/JakubMotyl/Gym-app",
-    techStack: ["React", "React Router", "Tailwind CSS"],
-    liveDemo: "https://gym-app-pink-beta.vercel.app",
-    image: FitCoreImg,
-  },
-];
-
 export default function Projects() {
   return (
     <section
@@ -118,8 +87,8 @@ export default function Projects() {
       </div>
       <div className="max-w-6xl w-full mx-auto">
         <div className="flex flex-col md:space-y-20 space-y-15">
-          {projectDetails.map((details, id) => (
-            <ProjectBox key={id} details={details} />
+          {projectDetails.map((details) => (
+            <ProjectBox key={details.id} details={details} />
           ))}
         </div>
       </div>
