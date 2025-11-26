@@ -10,15 +10,15 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
 
   return (
     <div
-      className={`flex w-full items-center gap-6 ${
+      className={`flex w-full items-center md:gap-10 gap-20 ${
         isReversed ? "md:flex-row-reverse" : "md:flex-row "
       } flex-col`}
     >
       <div className="md:w-1/2 w-full flex flex-col items-center gap-6">
-        <span className="font-bold md:text-[1.35rem] text-[1.25rem]">
+        <span className="font-bold md:text-[1.35rem] text-[1.25rem] text-text-main">
           {title}
         </span>
-        <p className="leading-relaxed md:text-[0.9rem] text-[0.85rem] text-center max-w-lg">
+        <p className="leading-relaxed md:text-[0.9rem] text-[0.85rem] text-center max-w-lg text-text-muted">
           {desc}
         </p>
         <ul className="flex items-center justify-center gap-4 flex-wrap">
@@ -26,7 +26,7 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
             <li key={id}>
               <span
                 className="bg-transparent px-4 py-2 rounded-3xl
-                text-center text-[#F6F6F6] border border-[#F6F6F6] 
+                text-center text-text-main border-2 border-border
                 font-bold md:text-[0.825rem] text-[0.75rem]"
               >
                 {stack}
@@ -55,11 +55,11 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
           </a>
         </div>
       </div>
-      <div className="md:w-1/2 w-full">
+      <div className="md:w-1/2 w-full relative overflow-hidden transition-all duration-300 ease-out rounded-xl hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group border-2 border-border hover:border-border-hover">
         <img
           src={image}
           alt={title}
-          className="w-full h-auto rounded-lg img-shadow"
+          className="w-full h-auto object-cover transition-all duration-300 brightness-80 group-hover:brightness-100"
         />
       </div>
     </div>
@@ -69,19 +69,12 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
 export default function Projects() {
   return (
     <section
-      className="flex flex-col items-center text-[#F6F6F6] section-p 2xl:gap-20 gap-10"
+      className="flex flex-col items-center text-text-main section-p 2xl:gap-20 gap-10"
       id="projects"
     >
-      <div className="max-w-6xl w-full mx-auto space-y-2">
-        <p className="text-[3rem] text-[#FFF] text-center font-semibold">
-          Projects
-        </p>
-        <p
-          className="text-center md:text-[1.5rem] text-[1.25rem]  font-medium"
-          style={{
-            fontFamily: `"Courier New", Courier, monospace`,
-          }}
-        >
+      <div className="space-y-2">
+        <p className="text-[3rem] text-center font-semibold">Projects</p>
+        <p className="text-center text-text-muted md:text-[1.5rem] text-[1.25rem] font-light">
           Things I've built and learned from
         </p>
       </div>

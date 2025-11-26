@@ -1,60 +1,65 @@
 @import "tailwindcss";
 
+@theme {
+  --color-background: #09090b;
+  --color-surface: #18181b;
+  --color-border: #27272a;
+  --color-border-hover: #3f3f46;
+  --color-text-main: #f4f4f5;
+  --color-text-muted: #d4d4d8;
+}
+
 body {
   min-height: 100%;
   width: 100%;
-  background: #212121;
+  background: var(--color-background);
   font-family: "Inter", sans-serif;
 }
 
 @layer components {
   .nav-shadow {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.45);
+  }
+  .font-sac {
+    font-family: "Sacramento", cursive;
+  }
+  .font-inter {
+    font-family: "Inter", sans-serif;
   }
   .section-p {
     @apply 2xl:px-20 2xl:py-20 md:px-10 md:py-10 p-7;
   }
   .custom-text {
-    @apply bg-linear-to-r from-[#60a5fa] to-[#a78bfa] bg-clip-text text-transparent font-normal;
-  }
-  .typed {
-    font-family: "Courier New", Courier, monospace;
-    width: 0;
-    overflow: hidden;
-    white-space: nowrap;
-    animation: typing 1.5s steps(16, end) forwards;
+    @apply bg-linear-to-r from-cyan-400 to-blue-600 bg-clip-text text-transparent;
   }
   .tech {
-    @apply 2xl:w-10 2xl:h-10 md:w-9 md:h-9 h-8 w-8 cursor-pointer;
+    @apply 2xl:w-13 2xl:h-13 md:w-12 md:h-12 h-11 w-11 cursor-pointer;
   }
   .tech-label {
-    @apply text-[#F6F6F6] font-bold md:text-[0.775rem] text-[0.7rem];
-  }
-  .tech:hover {
-    filter: drop-shadow(0 0 8px rgba(255, 255, 255, 0.35));
+    @apply text-text-muted font-bold md:text-[0.775rem] text-[0.7rem];
   }
   .btn-cv {
     @apply bg-transparent px-4 py-2 cursor-pointer rounded-3xl
-    text-center text-[#F6F6F6] border border-[#F6F6F6];
+    text-center text-text-muted border border-border hover:border-border-hover;
   }
-  .btn-cv:hover {
-    box-shadow: 0 0 8px rgba(255, 255, 255, 0.35);
+  .tech-hover:hover {
+    transform: translate(4px, -4px);
+    box-shadow: -1px 1px 0 var(--color-border-hover),
+      -2px 2px 0 var(--color-border-hover), -3px 3px 0 var(--color-border-hover),
+      -4px 4px 0 var(--color-border-hover);
   }
-  .img-shadow {
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
-    transition: all 0.5s;
-  }
-  .img-shadow:hover {
-    transform: scale(1.03);
-    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7);
+  .animation-fade-in {
+    animation: fadeInSlideUp 1s ease-out forwards;
   }
 }
 
-@keyframes typing {
+@keyframes fadeInSlideUp {
   from {
-    width: 0;
+    opacity: 0;
+    transform: translateY(40px);
   }
   to {
-    width: 100%;
+    opacity: 1;
+    transform: translateY(0);
   }
 }

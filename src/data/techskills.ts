@@ -7,6 +7,7 @@ import {
   SiCss3,
   SiTypescript,
   SiVite,
+  SiVitest,
 } from "react-icons/si";
 
 import type { SkillsProps } from "../types";
@@ -51,5 +52,10 @@ export const SKILLS: SkillsProps[] = [
     icon: SiVite,
     label: "Vite",
     color: "#646CFF",
+  },
+  {
+    icon: SiVitest,
+    label: "Vitest",
+    color: "#729B1B",
   },
 ];
