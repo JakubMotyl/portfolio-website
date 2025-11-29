@@ -39,7 +39,7 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
             href={github}
             target="_blank"
             rel="noopener noreferrer"
-            className="space-y-1 group"
+            className="gap-2 group flex flex-col items-center"
           >
             <SiGithub className="tech md:w-6 md:h-6 w-5 h-5" />
             <span className="tech-label group-hover:underline">Github</span>
@@ -48,7 +48,7 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
             href={liveDemo}
             target="_blank"
             rel="noopener noreferrer"
-            className="space-y-1 group"
+            className="gap-2 group flex flex-col items-center"
           >
             <MdOpenInNew className="tech md:w-6 md:h-6 w-5 h-5" />
             <span className="tech-label group-hover:underline">Live</span>

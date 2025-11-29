@@ -35,13 +35,13 @@ export default function Navbar() {
               <button
                 className="
               relative flex md:flex-col flex-row items-center justify-center
-              w-full md:w-auto md:px-4 md:py-2 cursor-pointer md:rounded-3xl
+              w-full md:w-auto md:px-4 md:py-2 cursor-pointer md:rounded-2xl
               hover:bg-text-main hover:text-background duration-200 group
               h-10
             "
                 onClick={() => handleScroll(section)}
               >
-                <Icon className="md:w-5 md:h-5 w-6 h-6" />
+                <Icon className="h-5 w-5" />
 
                 {/* Tooltip na md+ */}
                 <span

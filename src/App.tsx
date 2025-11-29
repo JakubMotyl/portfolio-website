@@ -15,15 +15,17 @@ export default function App() {
       {showIntro && <IntroOverlay onComplete={() => setShowIntro(false)} />}
 
       {!showIntro && (
-        <main className="flex flex-col h-screen relative animation-fade-in">
-          <Navbar />
-          <Hero />
-        </main>
+        <>
+          <div className="flex flex-col h-screen relative animation-fade-in">
+            <Navbar />
+            <Hero />
+          </div>
+          <TechSkills />
+          <About />
+          <Projects />
+          <Footer />
+        </>
       )}
-      <TechSkills />
-      <About />
-      <Projects />
-      <Footer />
     </>
   );
 }

@@ -1,12 +1,14 @@
 import AboutImg from "../assets/about.svg";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { CiMail } from "react-icons/ci";
 import type { IconType } from "react-icons";
 
 type LinksProps = {
   icon: IconType;
   label: string;
   color: string;
-  link: string;
+  link?: string;
+  mail?: string;
 };
 
 const SOCIALS: LinksProps[] = [
@@ -22,9 +24,21 @@ const SOCIALS: LinksProps[] = [
     color: "#0A66C2",
     link: "https://www.linkedin.com/in/jakub-motyl-141b13253/",
   },
+  {
+    icon: CiMail,
+    label: "Contact Me",
+    color: "#FFF",
+    mail: "&#x6b;&#x75;&#x62;&#x61;&#x6d;&#x6f;&#x74;&#x79;&#x6c;&#x31;&#x36;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;",
+  },
 ];
 
 export default function About() {
+  const decodeEmail = (encoded: string) => {
+    const txt = document.createElement("textarea");
+    txt.innerHTML = encoded;
+    return txt.value;
+  };
+
   return (
     <section
       id="about"
@@ -35,7 +49,7 @@ export default function About() {
       </div>
       <div className="flex items-center md:flex-row flex-col md:gap-10 gap-20 w-full max-w-6xl mx-auto">
         <div className="md:w-1/2 w-full flex flex-col gap-6">
-          <p className="2xl:text-[1.15rem] md:text-[1.05rem] text-[0.95rem] leading-relaxed text-text-muted">
+          <p className="2xl:text-[1.15rem] md:text-[1.05rem] md:text-left text-center text-[0.95rem] leading-relaxed text-text-muted">
             Hey, I'm Jakub! I'm a third-year Computer Science student and{" "}
             <span className="font-bold text-text-main">Frontend Developer</span>{" "}
             who specializes in building responsive interfaces using{" "}
@@ -47,27 +61,31 @@ export default function About() {
             Beyond coding, I maintain an active lifestyle through sports and
             unwind with video games.
           </p>
-          <div className="flex items-center justify-between md:flex-row flex-col gap-6">
-            <div className="flex items-center gap-6">
-              {SOCIALS.map(({ icon: Icon, label, color, link }, id) => (
-                <a
-                  key={id}
-                  href={link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="space-y-1 group"
-                >
-                  <Icon
-                    className="2xl:w-10 2xl:h-10 md:w-9 md:h-9 h-8 w-8 cursor-pointer"
-                    style={{ color }}
-                  />
-                  <span className="tech-label group-hover:underline">
-                    {label}
-                  </span>
-                </a>
-              ))}
+          <div className="flex items-center justify-between flex-col gap-6">
+            <div className="flex items-center md:justify-start justify-center w-full gap-6">
+              {SOCIALS.map(({ icon: Icon, label, color, link, mail }, id) => {
+                const href = mail ? `mailto:${decodeEmail(mail)}` : link;
+
+                return (
+                  <a
+                    key={id}
+                    href={href}
+                    target={mail ? undefined : "_blank"}
+                    rel="noopener noreferrer"
+                    className="gap-2 group flex items-center flex-col"
+                  >
+                    <Icon
+                      className="2xl:w-10 2xl:h-10 md:w-9 md:h-9 h-8 w-8 cursor-pointer"
+                      style={{ color }}
+                    />
+                    <span className="tech-label group-hover:underline">
+                      {label}
+                    </span>
+                  </a>
+                );
+              })}
             </div>
-            <div className="flex gap-6">
+            <div className="flex gap-6 md:justify-start justify-center w-full">
               <button className="btn-cv nav-shadow font-bold md:text-[0.825rem] text-[0.75rem]">
                 Download <span className="custom-text">CV</span> [PL]
               </button>

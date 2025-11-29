@@ -15,20 +15,20 @@ export default function IntroOverlay({ onComplete }: IntroOverlayProps) {
 
     const timer2 = setTimeout(() => {
       setFadeState("opacity-0 -translate-y-4");
-    }, 1500);
+    }, 1000);
 
     const timer3 = setTimeout(() => {
       setText("I'm Jakub");
       setFadeState("opacity-100 translate-y-0");
-    }, 2000);
+    }, 1500);
 
     const timer4 = setTimeout(() => {
       setFadeState("opacity-0 -translate-y-4");
-    }, 3500);
+    }, 2500);
 
     const timer5 = setTimeout(() => {
       onComplete();
-    }, 4000);
+    }, 3000);
 
     return () => {
       clearTimeout(timer1);

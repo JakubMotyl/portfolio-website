@@ -23,7 +23,7 @@ export default function Hero() {
           className={`md:text-[1.25rem] text-[0.95rem] font-light text-center md:max-w-xl max-w-lg mx-auto text-[#9CA3AF] duration-500`}
         >
           Frontend Developer specializing in{" "}
-          <span className="font-medium text-text-main">Rect</span> &{" "}
+          <span className="font-medium text-text-main">React</span> &{" "}
           <span className="font-medium text-text-main">TypeScript</span> to
           build scalable modern web applications. Based in{" "}
           <span className="font-medium text-text-main">Warsaw</span>,{" "}
@@ -48,7 +48,7 @@ export default function Hero() {
             href="mailto:&#x6b;&#x75;&#x62;&#x61;&#x6d;&#x6f;&#x74;&#x79;&#x6c;&#x31;&#x36;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;"
             className="text-text-muted hover:underline duration-200"
           >
-            &#x6b;&#x75;&#x62;&#x61;&#x6d;&#x6f;&#x74;&#x79;&#x6c;&#x31;&#x36;&#x40;&#x67;&#x6d;&#x61;&#x69;&#x6c;&#x2e;&#x63;&#x6f;&#x6d;
+            Contact Me
           </a>
         </div>
       </div>
