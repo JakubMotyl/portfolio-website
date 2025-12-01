@@ -21,41 +21,36 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="flex justify-center md:py-5 md:h-24 h-10">
+    <nav className="flex justify-center py-5 h-24">
       <div
         className={` bg-background text-text-main
-      md:w-fit w-full flex md:justify-between items-center
-      md:border border-border hover:border-border-hover muted md:rounded-2xl
-      nav-shadow duration-300 md:px-2 px-0 md:py-2
+      w-fit flex justify-between items-center
+      border border-border hover:border-border-hover muted rounded-2xl
+      nav-shadow duration-300 px-2 py-2
     `}
       >
-        <ul className="flex flex-row md:items-center w-full md:w-auto">
+        <ul className="flex flex-row items-center w-auto">
           {NAV_LIST.map(({ icon: Icon, label, section }, id) => (
             <li key={id} className="w-full md:w-auto">
               <button
                 className="
-              relative flex md:flex-col flex-row items-center justify-center
-              w-full md:w-auto md:px-4 md:py-2 cursor-pointer md:rounded-2xl
+              relative flex flex-col items-center justify-center
+              w-auto px-4 py-2 cursor-pointer rounded-2xl
               hover:bg-text-main hover:text-background duration-200 group
               h-10
             "
                 onClick={() => handleScroll(section)}
               >
                 <Icon className="h-5 w-5" />
-
-                {/* Tooltip na md+ */}
                 <span
                   className="
-                hidden md:absolute md:-bottom-8 md:mb-1 md:left-1/2 md:-translate-x-1/2
-                md:text-background md:bg-text-main md:rounded-3xl md:whitespace-nowrap 
-                md:font-medium md:text-[0.775rem] md:px-2 md:py-1 md:group-hover:block
-              "
+                    hidden absolute -bottom-8 mb-1 left-1/2 -translate-x-1/2
+                    text-background bg-text-main rounded-3xl whitespace-nowrap 
+                    font-medium text-[0.775rem] px-2 py-1 group-hover:block
+                  "
                 >
                   {label}
                 </span>
-
-                {/* Label na md- */}
-                <span className="md:hidden ml-2 font-medium">{label}</span>
               </button>
             </li>
           ))}
