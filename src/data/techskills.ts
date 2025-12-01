@@ -7,7 +7,6 @@ import {
   SiCss3,
   SiTypescript,
   SiVite,
-  SiVitest,
 } from "react-icons/si";
 
 import type { SkillsProps } from "../types";
