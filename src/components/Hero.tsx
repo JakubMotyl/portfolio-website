@@ -20,7 +20,7 @@ export default function Hero() {
       </div>
       <div>
         <p
-          className={`md:text-[1.25rem] text-[0.95rem] font-light text-center md:max-w-xl max-w-lg mx-auto text-[#9CA3AF] duration-500`}
+          className={`md:text-[1.25rem] text-[0.95rem] font-light text-center 2xl:max-w-2xl md:max-w-xl max-w-lg mx-auto text-[#9CA3AF] duration-500`}
         >
           Frontend Developer specializing in{" "}
           <span className="font-medium text-text-main">React</span> &{" "}

@@ -42,9 +42,9 @@ export const projectDetails: projectDetailsProps[] = [
   {
     id: 4,
     title: "Quiz App",
-    desc: "An interactive quiz application built with vanilla JavaScript, HTML, and CSS. Features include randomized question shuffling, a countdown timer, real-time score tracking, and Local Storage integration to persist user results between sessions.",
+    desc: "An interactive quiz application built with vanilla JavaScript, HTML, and CSS. Features include randomized question shuffling, a countdown timer, score tracking, Local Storage integration, and unit tests for randomization logic using Vitest.",
     github: "https://github.com/JakubMotyl/QuizApp-Js",
-    techStack: ["JavaScript", "HTML5", "CSS3", "Local Storage"],
+    techStack: ["JavaScript", "HTML5", "CSS3", "Local Storage", "Vitest"],
     liveDemo: "https://quiz-app-js-alpha.vercel.app/",
     image: QuizAppImg,
   },

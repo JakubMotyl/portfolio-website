@@ -53,9 +53,4 @@ export const SKILLS: SkillsProps[] = [
     label: "Vite",
     color: "#646CFF",
   },
-  {
-    icon: SiVitest,
-    label: "Vitest",
-    color: "#729B1B",
-  },
 ];
