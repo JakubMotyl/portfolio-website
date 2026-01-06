@@ -25,7 +25,7 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
           {techStack.map((stack, id) => (
             <li key={id}>
               <span
-                className="bg-transparent px-4 py-2 rounded-3xl
+                className="bg-transparent px-4 py-2 rounded-2xl
                 text-center text-text-main border-2 border-border
                 font-bold md:text-[0.825rem] text-[0.75rem]"
               >
@@ -55,7 +55,7 @@ const ProjectBox = ({ details }: { details: projectDetailsProps }) => {
           </a>
         </div>
       </div>
-      <div className="md:w-1/2 w-full relative overflow-hidden transition-all duration-300 ease-out rounded-xl hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group border-2 border-border hover:border-border-hover">
+      <div className="md:w-1/2 w-full relative overflow-hidden transition-all duration-300 ease-out rounded-2xl hover:-translate-y-1 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] group border-2 border-border hover:border-border-hover">
         <img
           src={image}
           alt={title}

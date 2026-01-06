@@ -1,12 +1,27 @@
-import FitCoreImg from "../assets/images/fitcore.png";
 import FilmZoneImg from "../assets/images/filmzone.png";
 import CryptoTradeImg from "../assets/images/cryptotrade.png";
 import QuizAppImg from "../assets/images/quiz-app.png";
+import TacticBoardImg from "../assets/images/tactic-board.png";
 import type { projectDetailsProps } from "../types";
 
 export const projectDetails: projectDetailsProps[] = [
   {
     id: 1,
+    title: "Tactic Board",
+    desc: "A highly customizable tactic board built with Next.js. Users can modify formations, pitch colors, and player details, then export their strategy as an image. Designed with Tailwind CSS for a clean and responsive interface.",
+    github: "https://github.com/JakubMotyl/tactic-board",
+    techStack: [
+      "Next.js",
+      "TypeScript",
+      "React",
+      "Tailwind CSS",
+      "html-to-image",
+    ],
+    liveDemo: "https://tactic-board-three.vercel.app/",
+    image: TacticBoardImg,
+  },
+  {
+    id: 2,
     title: "CryptoTrade",
     desc: "A cryptocurrency dashboard built with TypeScript, React, and Tailwind CSS. It provides real-time market data, dynamic charts, and an intuitive UI for tracking coin prices and performance.",
     github: "https://github.com/JakubMotyl/crypto-dashboard",
@@ -22,7 +37,7 @@ export const projectDetails: projectDetailsProps[] = [
     image: CryptoTradeImg,
   },
   {
-    id: 2,
+    id: 3,
     title: "FilmZone",
     desc: "A movie discovery app where users can search for films, browse by category, and save favorites. Built with React, React Router, and Tailwind CSS, integrating an external API for dynamic content.",
     github: "https://github.com/JakubMotyl/Movie-search",
@@ -30,15 +45,7 @@ export const projectDetails: projectDetailsProps[] = [
     liveDemo: "https://movie-search-lyart-five.vercel.app",
     image: FilmZoneImg,
   },
-  {
-    id: 3,
-    title: "FitCore",
-    desc: "A modern fitness app focused on clean UI and engaging user experience. Includes a sign-up page and smooth navigation between workout sections. Built with React, React Router, and Tailwind CSS.",
-    github: "https://github.com/JakubMotyl/Gym-app",
-    techStack: ["React", "Vite", "React Router", "Tailwind CSS"],
-    liveDemo: "https://gym-app-pink-beta.vercel.app",
-    image: FitCoreImg,
-  },
+
   {
     id: 4,
     title: "Quiz App",

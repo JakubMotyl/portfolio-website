@@ -7,11 +7,17 @@ import {
   SiCss3,
   SiTypescript,
   SiVite,
+  SiNextdotjs,
 } from "react-icons/si";
 
 import type { SkillsProps } from "../types";
 
 export const SKILLS: SkillsProps[] = [
+  {
+    icon: SiNextdotjs,
+    label: "Next.js",
+    color: "#FFFFFF",
+  },
   {
     icon: SiReact,
     label: "React",

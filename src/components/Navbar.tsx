@@ -45,7 +45,7 @@ export default function Navbar() {
                 <span
                   className="
                     hidden absolute -bottom-8 mb-1 left-1/2 -translate-x-1/2
-                    text-background bg-text-main rounded-3xl whitespace-nowrap 
+                    text-background bg-text-main rounded-2xl whitespace-nowrap 
                     font-medium text-[0.775rem] px-2 py-1 group-hover:block
                   "
                 >
