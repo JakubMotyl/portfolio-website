@@ -88,15 +88,15 @@ export default function About() {
             <div className="flex gap-6 md:justify-start justify-center w-full">
               <a
                 className="btn-cv nav-shadow font-bold md:text-[0.825rem] text-[0.75rem]"
-                href="/cv/Jakub_Motyl_Frontend_Developer_CV_PL.pdf"
-                download="Jakub_Motyl_Frontend_Developer_CV_PL.pdf"
+                href="/cv/Jakub_Motyl_Frontend_PL.pdf"
+                download="Jakub_Motyl_Frontend_PL.pdf"
               >
                 Download <span className="custom-text">CV</span> [PL]
               </a>
               <a
                 className="btn-cv nav-shadow font-bold md:text-[0.825rem] text-[0.75rem]"
-                href="/cv/Jakub_Motyl_Frontend_Developer_CV_EN.pdf"
-                download="Jakub_Motyl_Frontend_Developer_CV_EN.pdf"
+                href="/cv/Jakub_Motyl_Frontend_EN.pdf"
+                download="Jakub_Motyl_Frontend_EN.pdf"
               >
                 Download <span className="custom-text">CV</span> [EN]
               </a>
